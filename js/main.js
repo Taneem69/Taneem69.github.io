@@ -85,8 +85,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 /* ── Typewriter effect for hero role ── */
 const roles = [
   'Software Engineering Student',
-  'Interested in Web Development',
-  'AI/ML Enthusiast',
+  'Full-Stack Developer',
+  'React & Next.js Developer',
+  'NestJS & ASP.NET Developer',
+  'AI / ML Enthusiast',
 ];
 let roleIdx = 0, charIdx = 0, deleting = false;
 const roleEl = document.querySelector('.hero-role');

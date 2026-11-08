@@ -427,7 +427,11 @@ section { position: relative; z-index: 1; padding: 6rem 6vw; }
 }
 
 /* ── SKILLS ── */
-#skills {}
+#skills {
+  background: var(--navy-mid);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -492,7 +496,7 @@ section { position: relative; z-index: 1; padding: 6rem 6vw; }
 }
 
 /* ── PROJECTS ── */
-#projects { background: var(--navy-mid); }
+#projects { background: var(--navy); }
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -569,7 +573,11 @@ section { position: relative; z-index: 1; padding: 6rem 6vw; }
 }
 
 /* ── ACHIEVEMENTS ── */
-#achievements {}
+#achievements {
+  background: var(--navy-mid);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
 .achievements-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -609,7 +617,7 @@ section { position: relative; z-index: 1; padding: 6rem 6vw; }
 
 /* ── CONTACT ── */
 #contact {
-  background: var(--navy-mid);
+  background: var(--navy);
   text-align: center;
 }
 .contact-subtitle {
@@ -838,4 +846,109 @@ footer span { color: var(--gold); }
   .stat-number { font-size: 1.3rem; }
   section { padding: 3.5rem 4vw; }
   .project-card, .skill-category, .achievement-card { padding: 1rem; }
+}
+
+/* ══════════════════════════════════════════
+   EXPERIENCE + PROJECT LINKS  (added Nov 2026)
+══════════════════════════════════════════ */
+.exp-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem 2rem;
+  transition: border-color var(--transition), transform var(--transition);
+}
+.exp-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--gold);
+}
+.exp-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+.exp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.8rem 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.1rem;
+}
+.exp-role {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--white);
+  line-height: 1.2;
+}
+.exp-company {
+  margin-top: 0.25rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--gold);
+}
+.exp-date {
+  background: rgba(201,168,76,0.12);
+  color: var(--gold);
+  padding: 0.25rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.exp-points {
+  list-style: none;
+  display: grid;
+  gap: 0.7rem;
+  margin-bottom: 1.2rem;
+}
+.exp-points li {
+  position: relative;
+  padding-left: 1.3rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+.exp-points li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.72em;
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.project-btn {
+  padding: 0.38rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  color: var(--muted);
+  transition: border-color var(--transition), color var(--transition), transform var(--transition);
+}
+.project-btn:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+.project-btn.primary {
+  background: rgba(201,168,76,0.12);
+  border-color: rgba(201,168,76,0.35);
+  color: var(--gold);
+}
+
+@media (max-width: 640px) {
+  .exp-card { padding: 1.3rem 1.2rem; }
+  .exp-role { font-size: 1.1rem; }
+  .exp-points li { font-size: 0.88rem; }
+  .project-btn { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
 }

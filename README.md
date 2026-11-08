@@ -14,7 +14,7 @@ portfolio/
 ├── js/
 │   └── main.js         ← Animations, typewriter, scroll effects
 ├── assets/
-│   └── profile.png     ← Your profile photo
+│   └── profile pic.png ← Your profile photo
 └── README.md           ← This file
 ```
 
@@ -26,6 +26,7 @@ portfolio/
 Open `index.html` and search for the section you want to edit:
 - **Hero name/desc** → `<section id="hero">`
 - **About paragraph** → `<section id="about">`
+- **Work experience** → `<section id="experience">`
 - **Projects** → `<section id="projects">`
 - **Achievements** → `<section id="achievements">`
 - **Contact links** → `<section id="contact">`
@@ -44,8 +45,12 @@ Open `css/style.css` and edit the `:root` block at the top:
 ```
 That's it — changing these 6 variables rethemes the whole site instantly.
 
+### Add a new experience entry
+Copy the `.exp-card` block inside `<section id="experience">` in `index.html` and edit the role, company, dates and bullet points.
+
 ### Add a new project
 Copy one `.project-card` block inside `<div class="projects-grid">` in `index.html` and fill in your details.
+Links go in the `.project-links` row at the bottom of the card (use `project-btn primary` for the live demo, `project-btn` for repositories).
 
 ### Add a new skill tag
 Find the right `.skill-category` block and add:
@@ -59,14 +64,16 @@ Open `js/main.js` and edit the `roles` array near the top:
 ```js
 const roles = [
   'Software Engineering Student',
+  'AI Engineer Intern',
   'Full-Stack Developer',
-  'AI/ML Enthusiast',
-  'Open Source Contributor',
+  'React & Next.js Developer',
+  'NestJS & ASP.NET Developer',
+  'AI / ML Enthusiast',
 ];
 ```
 
 ### Replace profile photo
-Drop your new photo into the `assets/` folder and rename it `profile.png`.
+Drop your new photo into the `assets/` folder and update the `src` in `index.html` to match its file name.
 Or change the `src` in `index.html`:
 ```html
 <img src="assets/YOUR_PHOTO.jpg" alt="Your Name" />

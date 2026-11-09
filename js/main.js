@@ -114,29 +114,3 @@ function typeWriter() {
   setTimeout(typeWriter, deleting ? 45 : 80);
 }
 if (roleEl) setTimeout(typeWriter, 800);
-
-/* ── Counter animation for stats ── */
-function animateCounter(el, target, duration = 1400) {
-  let start = 0;
-  const step = target / (duration / 16);
-  const timer = setInterval(() => {
-    start += step;
-    if (start >= target) { start = target; clearInterval(timer); }
-    el.textContent = Number.isInteger(target)
-      ? Math.floor(start).toString()
-      : start.toFixed(2);
-  }, 16);
-}
-
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      document.querySelectorAll('[data-count]').forEach(el => {
-        animateCounter(el, parseFloat(el.dataset.count));
-      });
-      statsObserver.disconnect();
-    }
-  });
-}, { threshold: 0.5 });
-const statsSection = document.querySelector('.hero-stats');
-if (statsSection) statsObserver.observe(statsSection);
